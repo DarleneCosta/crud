@@ -15,7 +15,7 @@ const Table = (props: TableProps) => {
         <th className="text-left p-4">Código</th>
         <th className="text-left p-4">Nome</th>
         <th className="text-left p-4">Idade</th>
-        {showActions ? <th clasName="p-4">Ações</th> : false}
+        {showActions ? <th className="p-4">Ações</th> : false}
       </tr>
     );
   };
