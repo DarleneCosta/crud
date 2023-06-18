@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Layout from "./../components/Layout";
 import Table from "./../components/Table";
 import Client from "./../core/Client";
@@ -10,14 +11,25 @@ const Home = () => {
     new Client("Leo", 24, "4"),
   ];
 
-  console.log(clients, "home");
+  const clientSelected = (client: Client) => {
+    alert(client.name);
+  };
+
+  const clientDeleted = (client: Client) => {
+    alert(client.name);
+  };
+
   return (
     <div
       className={`flex justify-center items-center h-screen bg-gradient-to-r
     from-blue-500 to-purple-500 text-white`}
     >
-      <Layout titulo="Cadastro Simples">
-        <Table clients={clients}></Table>
+      <Layout title="Cadastro Simples">
+        <Table
+          clients={clients}
+          clientSelected={clientSelected}
+          clientDeleted={clientDeleted}
+        ></Table>
       </Layout>
     </div>
   );
